@@ -1,0 +1,52 @@
+{
+  "dataset_name": "Tev1 Grouped Template-Held-Out Split",
+  "upstream_source": "tegridydev/opensec-triage",
+  "license": "CC BY 4.0",
+  "split_methodology": "Grouped K-Fold Template Holdout (1 entire template family held out per class)",
+  "template_families_per_class": 5,
+  "train_template_families_per_class": 4,
+  "val_template_families_per_class": 1,
+  "template_family_overlap_count": 0,
+  "total_records": 4200,
+  "train_records": 3423,
+  "val_records": 777,
+  "train_class_distribution": {
+    "A": 483,
+    "B": 508,
+    "C": 476,
+    "D": 535,
+    "E": 474,
+    "F": 480,
+    "G": 467
+  },
+  "val_class_distribution": {
+    "A": 117,
+    "B": 92,
+    "C": 124,
+    "D": 65,
+    "E": 126,
+    "F": 120,
+    "G": 133
+  },
+  "files": {
+    "train": {
+      "path": "tev1_grouped_template_train.jsonl",
+      "record_count": 3423,
+      "sha256": "0d3362f0b2a30021c6e349038832ab94ea955049b1d90b2ca59a5d63722b94f5"
+    },
+    "val": {
+      "path": "tev1_grouped_template_val.jsonl",
+      "record_count": 777,
+      "sha256": "fa9d49da881df0f6462111bc6f259981ac781ac33e3f96b519fd9a1bd35bcd64"
+    }
+  },
+  "held_out_families_by_class": {
+    "A": "The action traces to a workload for which forensic review established an unauthorised change of control",
+    "B": "The volume and timing differ from the established baseline and the responsible team has not explained the deviation",
+    "C": "The action matches a recurring business transaction in prior reviewed sessions, including its scope and result",
+    "D": "The resource owner\u2019s approved operations request <CHG_ID> explicitly covers the action and initiating administrator",
+    "E": "The security team\u2019s validation job <SEC_ID> accounts for the observed action and its target scope",
+    "F": "An incorrect retry setting caused the action to recur; service traces reproduced the same sequence",
+    "G": "Two context sources disagree about workflow attribution and neither can be independently verified"
+  }
+}

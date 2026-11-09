@@ -1,0 +1,200 @@
+{
+  "sample_audit": {
+    "total_evaluated_records": 200,
+    "attack_count": 100,
+    "non_attack_count": 100,
+    "balanced_design": true
+  },
+  "conditions": {
+    "Condition_A": {
+      "base_model": {
+        "accuracy": 0.45,
+        "accuracy_ci95": [
+          0.38,
+          0.52
+        ],
+        "balanced_accuracy": 0.45,
+        "balanced_accuracy_ci95": [
+          0.385,
+          0.512421906505192
+        ],
+        "macro_f1": 0.4270833333333333,
+        "macro_f1_ci95": [
+          0.35648648177865183,
+          0.4936118114760102
+        ],
+        "tpr": 0.65,
+        "tpr_wilson_ci95": [
+          0.5525446352830035,
+          0.7363573587094854
+        ],
+        "fpr": 0.75,
+        "fpr_wilson_ci95": [
+          0.656955566782793,
+          0.8245477565380216
+        ],
+        "counts": {
+          "TP": 65,
+          "FN": 35,
+          "FP": 75,
+          "TN": 25
+        }
+      },
+      "grouped_adapter": {
+        "accuracy": 0.615,
+        "accuracy_ci95": [
+          0.55,
+          0.68
+        ],
+        "balanced_accuracy": 0.615,
+        "balanced_accuracy_ci95": [
+          0.5500790575570217,
+          0.6786024072332043
+        ],
+        "macro_f1": 0.6088888888888889,
+        "macro_f1_ci95": [
+          0.5416666666666666,
+          0.6740138920233707
+        ],
+        "tpr": 0.49,
+        "tpr_wilson_ci95": [
+          0.39422017609719606,
+          0.5865196909699714
+        ],
+        "fpr": 0.26,
+        "fpr_wilson_ci95": [
+          0.1840471177825886,
+          0.3537096918294295
+        ],
+        "counts": {
+          "TP": 49,
+          "FN": 51,
+          "FP": 26,
+          "TN": 74
+        }
+      },
+      "paired_difference_adapter_minus_base": {
+        "delta_accuracy": 0.16499999999999998,
+        "delta_accuracy_ci95": [
+          0.08999999999999997,
+          0.24
+        ],
+        "delta_balanced_accuracy": 0.16499999999999998,
+        "delta_balanced_accuracy_ci95": [
+          0.10425830200501246,
+          0.22689377475127984
+        ],
+        "delta_macro_f1": 0.1818055555555556,
+        "delta_macro_f1_ci95": [
+          0.11233956068938937,
+          0.2528948254886755
+        ],
+        "delta_tpr": -0.16,
+        "delta_tpr_ci95": [
+          -0.24,
+          -0.08
+        ],
+        "delta_fpr": -0.49,
+        "delta_fpr_ci95": [
+          -0.59,
+          -0.4
+        ]
+      }
+    },
+    "Condition_B": {
+      "base_model": {
+        "accuracy": 0.51,
+        "accuracy_ci95": [
+          0.445,
+          0.575
+        ],
+        "balanced_accuracy": 0.51,
+        "balanced_accuracy_ci95": [
+          0.5,
+          0.526595744680851
+        ],
+        "macro_f1": 0.3551783129359126,
+        "macro_f1_ci95": [
+          0.3154597347455905,
+          0.39952784503631955
+        ],
+        "tpr": 0.02,
+        "tpr_wilson_ci95": [
+          0.005501980308152146,
+          0.07001163891588401
+        ],
+        "fpr": 0.0,
+        "fpr_wilson_ci95": [
+          0.0,
+          0.03699335335837099
+        ],
+        "counts": {
+          "TP": 2,
+          "FN": 98,
+          "FP": 0,
+          "TN": 100
+        }
+      },
+      "grouped_adapter": {
+        "accuracy": 0.52,
+        "accuracy_ci95": [
+          0.455,
+          0.59
+        ],
+        "balanced_accuracy": 0.52,
+        "balanced_accuracy_ci95": [
+          0.5046728971962616,
+          0.5416764018691588
+        ],
+        "macro_f1": 0.37629937629937626,
+        "macro_f1_ci95": [
+          0.3301489831308989,
+          0.4282744282744283
+        ],
+        "tpr": 0.04,
+        "tpr_wilson_ci95": [
+          0.015663332030940336,
+          0.09837055305876097
+        ],
+        "fpr": 0.0,
+        "fpr_wilson_ci95": [
+          0.0,
+          0.03699335335837099
+        ],
+        "counts": {
+          "TP": 4,
+          "FN": 96,
+          "FP": 0,
+          "TN": 100
+        }
+      },
+      "paired_difference_adapter_minus_base": {
+        "delta_accuracy": 0.010000000000000009,
+        "delta_accuracy_ci95": [
+          0.0,
+          0.025000000000000022
+        ],
+        "delta_balanced_accuracy": 0.010000000000000009,
+        "delta_balanced_accuracy_ci95": [
+          0.0,
+          0.02604166666666663
+        ],
+        "delta_macro_f1": 0.021121063363463644,
+        "delta_macro_f1_ci95": [
+          0.0,
+          0.05380216786703691
+        ],
+        "delta_tpr": 0.02,
+        "delta_tpr_ci95": [
+          0.0,
+          0.05
+        ],
+        "delta_fpr": 0.0,
+        "delta_fpr_ci95": [
+          0.0,
+          0.0
+        ]
+      }
+    }
+  }
+}

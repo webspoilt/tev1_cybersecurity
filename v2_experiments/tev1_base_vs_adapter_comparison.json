@@ -1,0 +1,587 @@
+{
+  "metadata": {
+    "dataset": "tev1_training_candidate/tev1_triage_candidate_val.jsonl",
+    "sample_count": 700,
+    "classes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "class_mapping": {
+      "A": "malicious",
+      "B": "suspicious",
+      "C": "benign",
+      "D": "expected_admin",
+      "E": "authorised_testing",
+      "F": "misconfiguration",
+      "G": "unknown"
+    }
+  },
+  "macro_summary": {
+    "base_model": {
+      "accuracy": 0.3557142857142857,
+      "macro_f1": 0.3075002672245599,
+      "invalid_rate": 0.0,
+      "latency_ms_per_sample": 393.5,
+      "peak_vram_mb": 855.47,
+      "correct_count": 249
+    },
+    "pilot_adapter": {
+      "accuracy": 0.97,
+      "macro_f1": 0.9704876830688371,
+      "invalid_rate": 0.0,
+      "latency_ms_per_sample": 1830.6,
+      "peak_vram_mb": 904.58,
+      "correct_count": 679
+    },
+    "delta_percentage_points": {
+      "accuracy_improvement": 61.42857142857143,
+      "macro_f1_improvement": 66.29874158442772,
+      "latency_increase_ms": 1437.1,
+      "peak_vram_increase_mb": 49.110000000000014
+    }
+  },
+  "per_class_comparison": {
+    "A": {
+      "class_name": "malicious",
+      "support": 100,
+      "base": {
+        "precision": 0.5423728813559322,
+        "recall": 0.32,
+        "f1": 0.4025157232704403
+      },
+      "pilot": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "delta_percentage_points": {
+        "precision": 45.76271186440678,
+        "recall": 68.0,
+        "f1": 59.74842767295597
+      }
+    },
+    "B": {
+      "class_name": "suspicious",
+      "support": 100,
+      "base": {
+        "precision": 0.2,
+        "recall": 0.72,
+        "f1": 0.3130434782608696
+      },
+      "pilot": {
+        "precision": 0.8389830508474576,
+        "recall": 0.99,
+        "f1": 0.908256880733945
+      },
+      "delta_percentage_points": {
+        "precision": 63.898305084745765,
+        "recall": 27.0,
+        "f1": 59.52134024730753
+      }
+    },
+    "C": {
+      "class_name": "benign",
+      "support": 100,
+      "base": {
+        "precision": 0.5641025641025641,
+        "recall": 0.66,
+        "f1": 0.6082949308755761
+      },
+      "pilot": {
+        "precision": 1.0,
+        "recall": 0.89,
+        "f1": 0.9417989417989417
+      },
+      "delta_percentage_points": {
+        "precision": 43.58974358974359,
+        "recall": 23.0,
+        "f1": 33.35040109233657
+      }
+    },
+    "D": {
+      "class_name": "expected_admin",
+      "support": 100,
+      "base": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0
+      },
+      "pilot": {
+        "precision": 0.9900990099009901,
+        "recall": 1.0,
+        "f1": 0.9950248756218906
+      },
+      "delta_percentage_points": {
+        "precision": 99.00990099009901,
+        "recall": 100.0,
+        "f1": 99.50248756218906
+      }
+    },
+    "E": {
+      "class_name": "authorised_testing",
+      "support": 100,
+      "base": {
+        "precision": 0.3617021276595745,
+        "recall": 0.17,
+        "f1": 0.23129251700680273
+      },
+      "pilot": {
+        "precision": 1.0,
+        "recall": 0.99,
+        "f1": 0.9949748743718593
+      },
+      "delta_percentage_points": {
+        "precision": 63.829787234042556,
+        "recall": 82.0,
+        "f1": 76.36823573650565
+      }
+    },
+    "F": {
+      "class_name": "misconfiguration",
+      "support": 100,
+      "base": {
+        "precision": 1.0,
+        "recall": 0.02,
+        "f1": 0.0392156862745098
+      },
+      "pilot": {
+        "precision": 0.9900990099009901,
+        "recall": 1.0,
+        "f1": 0.9950248756218906
+      },
+      "delta_percentage_points": {
+        "precision": -0.990099009900991,
+        "recall": 98.0,
+        "f1": 95.58091893473808
+      }
+    },
+    "G": {
+      "class_name": "unknown",
+      "support": 100,
+      "base": {
+        "precision": 0.5217391304347826,
+        "recall": 0.6,
+        "f1": 0.5581395348837209
+      },
+      "pilot": {
+        "precision": 1.0,
+        "recall": 0.92,
+        "f1": 0.9583333333333334
+      },
+      "delta_percentage_points": {
+        "precision": 47.82608695652174,
+        "recall": 32.00000000000001,
+        "f1": 40.01937984496124
+      }
+    }
+  },
+  "confusion_matrices": {
+    "labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "base_confusion_matrix": [
+      [
+        32,
+        68,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        72,
+        21,
+        0,
+        0,
+        0,
+        7
+      ],
+      [
+        2,
+        22,
+        66,
+        0,
+        3,
+        0,
+        7
+      ],
+      [
+        14,
+        30,
+        16,
+        0,
+        26,
+        0,
+        14
+      ],
+      [
+        10,
+        50,
+        2,
+        0,
+        17,
+        0,
+        21
+      ],
+      [
+        1,
+        79,
+        12,
+        0,
+        0,
+        2,
+        6
+      ],
+      [
+        0,
+        39,
+        0,
+        0,
+        1,
+        0,
+        60
+      ]
+    ],
+    "pilot_confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        99,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        11,
+        89,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        99,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        92
+      ]
+    ]
+  },
+  "pilot_error_taxonomy": {
+    "total_errors": 21,
+    "by_category": {
+      "confusing_class_boundaries": 11,
+      "missing_context": 8,
+      "ambiguous_evidence": 1,
+      "template_pattern_dependence": 1
+    },
+    "error_records": [
+      {
+        "record_id": 176,
+        "ground_truth": "B",
+        "ground_truth_name": "suspicious",
+        "pilot_pred": "F",
+        "pilot_pred_name": "misconfiguration",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "ambiguous_evidence",
+        "concrete_reason": "Policy change to collect fewer events during recovery period had conflicting signs of misconfiguration vs suspicious intent.",
+        "state_excerpt": "Policy audit on RESEARCH-ASSET-883452054d1c7f63 recorded that an audit policy was changed to collect fewer event categories. The event references principal-2b483d07b5150a04. Business context: internal research and analysis. The event occurred during a service recovery period. Environment: Centrally "
+      },
+      {
+        "record_id": 206,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Resolver logs on PEOPLE-ASSET-e75be5104e0a69ab recorded that a client requested many long, high-entropy DNS labels. The event references principal-dda2cc8b07176a0a. Business context: employee services and workforce records. The event occurred during the local overnight period. Environment: Centrally"
+      },
+      {
+        "record_id": 217,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Identity audit on PROCUREMENT-ASSET-995b24c8f4b10a4c recorded that repeated failed sign-ins were recorded for an account. The event references principal-e0cf586fd82e9f39. Business context: supplier and purchasing workflows. The event occurred during a weekend observation window. Environment: Central"
+      },
+      {
+        "record_id": 223,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Egress flow logs on SALES-ASSET-666e447c5a8402e2 recorded that a workload opened an encrypted connection to an external service. The event references principal-d0221d07791f630a. Business context: customer relationship management. The business unit was participating in a platform migration. Environme"
+      },
+      {
+        "record_id": 236,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "A",
+        "base_pred_name": "malicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Waf logs on FINANCE-ASSET-b0ad94aa5f957127 recorded that HTTP requests contained input patterns matching an injection detection rule. The event references principal-a9813a7a62c9066c. Business context: financial reporting and reconciliation. The event occurred during a service recovery period. Enviro"
+      },
+      {
+        "record_id": 255,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Cloud control audit on LEGAL-ASSET-ad141cdeea00369f recorded that a session deleted a group of cloud resources. The event references principal-5fffbc83cc7c2949. Business context: contract and records management. The observation window coincided with an application release day. Environment: Centrally"
+      },
+      {
+        "record_id": 260,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "G",
+        "base_pred_name": "unknown",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Configuration audit on PEOPLE-ASSET-2dc725ede4a4fa73 recorded that a client proxy setting was changed. The event references principal-78b9d3ffc421d89f. Business context: employee services and workforce records. The event occurred during the local overnight period. Environment: Centrally managed serv"
+      },
+      {
+        "record_id": 263,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Storage audit on ENGINEERING-ASSET-3758eb0240380295 recorded that an object-storage access policy was broadened. The event references principal-8f613bc3b74ee39c. Business context: product development and integration. The observation window coincided with quarter-end processing. Environment: Centrall"
+      },
+      {
+        "record_id": 269,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Repository audit on PROCUREMENT-ASSET-d5edb6367c83ac66 recorded that a repository collaborator received elevated permissions. The event references principal-46a8ab19f694629f. Business context: supplier and purchasing workflows. The event occurred during a weekend observation window. Environment: Cen"
+      },
+      {
+        "record_id": 270,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Group audit on RESEARCH-ASSET-b344344c7e2b61d5 recorded that an account was added to a privileged local group. The event references principal-c4383d56cb73b903. Business context: internal research and analysis. The event occurred during a service recovery period. Environment: Centrally managed servic"
+      },
+      {
+        "record_id": 277,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "A",
+        "base_pred_name": "malicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Waf logs on SUPPORT-ASSET-9393e38bc591e2fb recorded that HTTP requests contained input patterns matching an injection detection rule. The event references principal-74b381e6a07e7682. Business context: customer case management. The event occurred during the local overnight period. Environment: Centra"
+      },
+      {
+        "record_id": 292,
+        "ground_truth": "C",
+        "ground_truth_name": "benign",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "confusing_class_boundaries",
+        "concrete_reason": "Telemetry describes severe trigger (e.g. WAF injection, brute force, DNS tunneling signature); model prioritised threat signature over peer corroboration.",
+        "state_excerpt": "Kubernetes audit on PEOPLE-ASSET-4aa83d56f6b9cf50 recorded that a pod was created with privileged execution enabled. The event references principal-9defdc1904e95f79. Business context: employee services and workforce records. The event occurred during the local overnight period. Environment: Centrall"
+      },
+      {
+        "record_id": 493,
+        "ground_truth": "E",
+        "ground_truth_name": "authorised_testing",
+        "pilot_pred": "D",
+        "pilot_pred_name": "expected_admin",
+        "base_pred": "C",
+        "base_pred_name": "benign",
+        "cause_category": "template_pattern_dependence",
+        "concrete_reason": "Assessment/engagement record resembled routine operational administrator firewall changes.",
+        "state_excerpt": "Firewall audit on OPERATIONS-ASSET-a7342409febdce9b recorded that a firewall rule was changed to allow an additional traffic path. The event references principal-b95c1edabc452767. Business context: service delivery and infrastructure. The event occurred during the local weekday work period. Environm"
+      },
+      {
+        "record_id": 616,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Compute audit on SALES-ASSET-dfb3a7f9253f266d recorded that a principal launched multiple compute instances. The event references principal-28065f85396df753. Business context: customer relationship management. The business unit was participating in a platform migration. Environment: Centrally manage"
+      },
+      {
+        "record_id": 618,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Cloud control audit on PEOPLE-ASSET-16ac564d84249b00 recorded that resources were created in a region with little prior activity. The event references principal-aa3fb6d77e4d5080. Business context: employee services and workforce records. The event occurred during the local overnight period. Environm"
+      },
+      {
+        "record_id": 625,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Cloud control audit on OPERATIONS-ASSET-e93b433df5256392 recorded that a session deleted a group of cloud resources. The event references principal-c6e3a0555c49afc2. Business context: service delivery and infrastructure. The event occurred during the local weekday work period. Environment: Centrally"
+      },
+      {
+        "record_id": 629,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "G",
+        "base_pred_name": "unknown",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Agent audit on FINANCE-ASSET-074db932c6674984 recorded that a privileged session changed endpoint monitoring settings. The event references principal-91fab983d0492f1d. Business context: financial reporting and reconciliation. The event occurred during a service recovery period. Environment: Centrall"
+      },
+      {
+        "record_id": 646,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Application audit on COMMUNICATIONS-ASSET-de16dcc21e8f343f recorded that an application requested repeated screen captures. The event references principal-412f6e869d4cc054. Business context: internal and external communications. The event occurred during the local overnight period. Environment: Cent"
+      },
+      {
+        "record_id": 665,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Kubernetes audit on SALES-ASSET-aaddde69bba98b10 recorded that a workload mounted a directory from its host filesystem. The event references principal-f4ae0f0ba60b7ce8. Business context: customer relationship management. The business unit was participating in a platform migration. Environment: Centr"
+      },
+      {
+        "record_id": 675,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "B",
+        "base_pred_name": "suspicious",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Key service audit on RESEARCH-ASSET-d6ad7ef5decc0327 recorded that a principal issued a burst of key-service decrypt requests. The event references principal-7a072112dfa2baaa. Business context: internal research and analysis. The event occurred during a service recovery period. Environment: Centrall"
+      },
+      {
+        "record_id": 682,
+        "ground_truth": "G",
+        "ground_truth_name": "unknown",
+        "pilot_pred": "B",
+        "pilot_pred_name": "suspicious",
+        "base_pred": "G",
+        "base_pred_name": "unknown",
+        "cause_category": "missing_context",
+        "concrete_reason": "Telemetry logs expired or uncorroborated; model defaulted to conservative 'suspicious' instead of acknowledging 'unknown'.",
+        "state_excerpt": "Kerberos audit on SUPPORT-ASSET-ec39747dbc759d15 recorded that an account requested service tickets for multiple services. The event references principal-1395c9145daa0ab9. Business context: customer case management. The event occurred during the local overnight period. Environment: Centrally managed"
+      }
+    ]
+  }
+}

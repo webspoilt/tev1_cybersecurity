@@ -1,0 +1,96 @@
+{
+  "audit_metadata": {
+    "dataset_evaluated": "tev1_training_candidate/tev1_triage_candidate_val.jsonl",
+    "sample_count": 700,
+    "classes": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "class_mapping": {
+      "A": "malicious",
+      "B": "suspicious",
+      "C": "benign",
+      "D": "expected_admin",
+      "E": "authorised_testing",
+      "F": "misconfiguration",
+      "G": "unknown"
+    }
+  },
+  "template_leakage_audit": {
+    "exact_state_duplicates": 0,
+    "exact_skeleton_matches": 0,
+    "jaccard_similarity": {
+      "val_records_jaccard_ge_90_pct": 0,
+      "val_records_jaccard_ge_80_pct": 31,
+      "mean_max_jaccard": 0.705762552765266
+    },
+    "verification_clause_overlap": {
+      "val_records_sharing_normalized_train_clause": 700,
+      "percentage_sharing_clause": 100.0,
+      "unique_verification_clauses_in_train": {
+        "A": 15,
+        "B": 14,
+        "C": 14,
+        "D": 14,
+        "E": 14,
+        "F": 14,
+        "G": 15
+      },
+      "leakage_mechanism": "OpenSec-Triage generates alerts by pairing parameterized scenario bodies with fixed pools of ~14-15 syntactic verification/evidence clauses per class (for A, B, C, F, G). While asset names, principals, and timestamps are randomized, 100% (700/700) of validation records contain identical trailing verification clauses that uniquely correlate with ground-truth labels in the training corpus."
+    }
+  },
+  "metric_verification": {
+    "base_accuracy": 0.3557142857142857,
+    "pilot_accuracy": 0.97,
+    "base_macro_f1": 0.3075002672245599,
+    "pilot_macro_f1": 0.9704876830688371,
+    "recomputed_match_saved": true,
+    "pilot_error_count": 21,
+    "pilot_errors_by_transition": {
+      "B->F": 1,
+      "C->B": 11,
+      "E->D": 1,
+      "G->B": 8
+    },
+    "conservative_error_audit": {
+      "truly_conservative_count": 19,
+      "non_conservative_count": 2,
+      "percentage_conservative": 90.47619047619048,
+      "non_conservative_details": [
+        {
+          "id": 176,
+          "transition": "B (suspicious) -> F (misconfiguration)",
+          "classification": "Non-conservative downgrade from security threat to operational fault"
+        },
+        {
+          "id": 493,
+          "transition": "E (authorised_testing) -> D (expected_admin)",
+          "classification": "Non-conservative administrative misattribution"
+        }
+      ]
+    }
+  },
+  "latency_audit": {
+    "base_observed_total_s": 275.43,
+    "base_observed_ms_per_sample": 393.5,
+    "pilot_observed_total_s": 1281.43,
+    "pilot_observed_ms_per_sample": 1830.6,
+    "first_batch_100_pilot_s": 920.5,
+    "subsequent_batches_600_pilot_s": 360.9,
+    "subsequent_batches_pilot_ms_per_sample": 601.5,
+    "warm_benchmark_base_ms": 441.5,
+    "warm_benchmark_pilot_ms": 575.0,
+    "explanation": "The apparent 1,830.6 ms/sample vs 393.5 ms/sample latency discrepancy was caused by an un-warmed initial run and JIT compilation / initial PyTorch CUDA context initialization delay during the first 100 samples of evaluate_pilot_val.py (which took 920.5s for 100 samples = ~9.2s/sample). Over the subsequent 600 samples (200 to 700), the pilot run completed in 360.9s, yielding ~601.5 ms/sample. Controlled warm single-call benchmarking confirms base model latency is 441.5 ms/call and pilot adapter latency is 575.0 ms/call (LoRA overhead is ~133.5 ms/call, not 1,437 ms)."
+  },
+  "generalization_verdict": "POSSIBLE TEMPLATE LEAKAGE",
+  "verdict_justification": "While there are 0 exact duplicates and only 4.4% near-duplicates at Jaccard >= 0.80, 100% of validation records share identical trailing verification clauses with the training set. OpenSec-Triage relies on synthetic template grammars where ~14 canonical verification clauses per class act as near-deterministic labels. Consequently, the 97.00% validation accuracy reflects successful template-pattern fitting rather than proven generalized reasoning on unseen telemetry.",
+  "recommended_independent_evaluation": {
+    "dataset_candidate": "Boss of the SOC (BOTS) v1-v3 / Splunk Security Content or Certified CIC-IDS/CSE-CIC-IDS2018 Incident Triage Scenarios",
+    "requirements": "Real-world or human-authored SOC decision logs with diverse grammatical formulations and independent ground-truth adjudication."
+  }
+}

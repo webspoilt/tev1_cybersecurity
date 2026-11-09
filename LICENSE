@@ -1,0 +1,37 @@
+MIT License
+
+Copyright (c) 2026 JEV / Tev1 Research Initiative
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+---
+
+### Third-Party Licenses, Attribution & Model Weight Restrictions
+
+1. **Base Model Weights:**
+   `togethercomputer/Tev1-0.8B-experimental` is developed by Together AI and governed by Together AI's research release terms. This MIT License applies strictly to original JEV-authored source code, evaluation harnesses, and documentation scripts. It does not grant redistribution or commercial rights to base model weights or derivative LoRA adapters.
+
+2. **Derivative LoRA Adapter Weights:**
+   Fine-tuned adapter weights (`adapter_model.safetensors`) derived from `Tev1-0.8B-experimental` remain BLOCKED from public distribution pending authoritative confirmation of derivative weight licensing terms from Together AI.
+
+3. **Training Dataset:**
+   The training dataset derives from `tegridydev/opensec-triage` under the Creative Commons Attribution 4.0 International (CC BY 4.0) License.
+
+4. **Independent Benchmark:**
+   SecAlertBench (`Dxsssu/SecAlertBench`) is an independent research benchmark. Raw alert records are quarantined and excluded from distribution.

@@ -1,0 +1,55 @@
+# Python Virtual Environments
+.venv/
+.venv*/
+env/
+venv/
+ENV/
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+
+# Local OS & Machine Artifacts
+.DS_Store
+Thumbs.db
+*.tmp
+*.bak
+*.swp
+*~
+
+# VS Code / JetBrains / Antigravity Local Artifacts
+.vscode/
+.idea/
+.gemini/
+*.log
+
+# Sensitive Credentials & Machine Configuration
+.env
+.env.*
+*.pem
+*.key
+token.txt
+hf_token*
+kaggle.json
+credentials.json
+
+# Large Raw Dumps & Quarantined External Raw Downloads
+data/Trendyol/*.jsonl
+data/LANL_Cyber1/*.csv
+data/OpenSec_Triage/*.jsonl
+eval_independent/*.json
+*.zip
+*.tar.gz
+
+# Local PyTorch Checkpoints & Intermediate States (Keep only final pilot weights in git/git-lfs)
+v2_experiments/tev1_qlora_pilot_v1/checkpoint-*/
+v2_experiments/smoke_adapter_*/
+*.pt
+*.bin
+*.pth

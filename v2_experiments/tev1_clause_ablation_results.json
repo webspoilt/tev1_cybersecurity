@@ -1,0 +1,258 @@
+{
+  "model": "togethercomputer/Tev1-0.8B-experimental",
+  "adapter": "C:\\Users\\ASUS\\Desktop\\jev\\v2_experiments\\tev1_qlora_pilot_v1",
+  "total_records": 700,
+  "substantive_evidence_removed_count": 700,
+  "macro_summary": {
+    "original": {
+      "accuracy": 0.97,
+      "macro_f1": 0.9704876830688371,
+      "correct_count": 679,
+      "invalid_rate": 0.0
+    },
+    "ablated": {
+      "accuracy": 0.14714285714285713,
+      "macro_f1": 0.050163372461873336,
+      "correct_count": 102,
+      "invalid_rate": 0.0,
+      "elapsed_seconds": 415.14677572250366,
+      "ms_per_sample": 593.0668224607195
+    },
+    "delta_percentage_points": {
+      "accuracy_delta": -82.28571428571428,
+      "macro_f1_delta": -92.03243106069638
+    }
+  },
+  "per_class_comparison": {
+    "A": {
+      "class_name": "malicious",
+      "original_recall": 1.0,
+      "ablated_recall": 0.05,
+      "delta_recall_pp": -95.0,
+      "original_precision": 1.0,
+      "ablated_precision": 0.2,
+      "delta_precision_pp": -80.0,
+      "original_f1": 1.0,
+      "ablated_f1": 0.08,
+      "delta_f1_pp": -92.0
+    },
+    "B": {
+      "class_name": "suspicious",
+      "original_recall": 0.99,
+      "ablated_recall": 0.97,
+      "delta_recall_pp": -2.0000000000000018,
+      "original_precision": 0.8389830508474576,
+      "ablated_precision": 0.14499252615844543,
+      "delta_precision_pp": -69.39905246890122,
+      "original_f1": 0.908256880733945,
+      "ablated_f1": 0.25227568270481143,
+      "delta_f1_pp": -65.59811980291335
+    },
+    "C": {
+      "class_name": "benign",
+      "original_recall": 0.89,
+      "ablated_recall": 0.0,
+      "delta_recall_pp": -89.0,
+      "original_precision": 1.0,
+      "ablated_precision": 0.0,
+      "delta_precision_pp": -100.0,
+      "original_f1": 0.9417989417989417,
+      "ablated_f1": 0.0,
+      "delta_f1_pp": -94.17989417989418
+    },
+    "D": {
+      "class_name": "expected_admin",
+      "original_recall": 1.0,
+      "ablated_recall": 0.0,
+      "delta_recall_pp": -100.0,
+      "original_precision": 0.9900990099009901,
+      "ablated_precision": 0.0,
+      "delta_precision_pp": -99.00990099009901,
+      "original_f1": 0.9950248756218906,
+      "ablated_f1": 0.0,
+      "delta_f1_pp": -99.50248756218906
+    },
+    "E": {
+      "class_name": "authorised_testing",
+      "original_recall": 0.99,
+      "ablated_recall": 0.0,
+      "delta_recall_pp": -99.0,
+      "original_precision": 1.0,
+      "ablated_precision": 0.0,
+      "delta_precision_pp": -100.0,
+      "original_f1": 0.9949748743718593,
+      "ablated_f1": 0.0,
+      "delta_f1_pp": -99.49748743718592
+    },
+    "F": {
+      "class_name": "misconfiguration",
+      "original_recall": 1.0,
+      "ablated_recall": 0.01,
+      "delta_recall_pp": -99.0,
+      "original_precision": 0.9900990099009901,
+      "ablated_precision": 0.16666666666666666,
+      "delta_precision_pp": -82.34323432343234,
+      "original_f1": 0.9950248756218906,
+      "ablated_f1": 0.018867924528301886,
+      "delta_f1_pp": -97.61569510935887
+    },
+    "G": {
+      "class_name": "unknown",
+      "original_recall": 0.92,
+      "ablated_recall": 0.0,
+      "delta_recall_pp": -92.0,
+      "original_precision": 1.0,
+      "ablated_precision": 0.0,
+      "delta_precision_pp": -100.0,
+      "original_f1": 0.9583333333333334,
+      "ablated_f1": 0.0,
+      "delta_f1_pp": -95.83333333333334
+    }
+  },
+  "confusion_matrices": {
+    "labels": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "F",
+      "G"
+    ],
+    "original_confusion_matrix": [
+      [
+        100,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        99,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        11,
+        89,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        99,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        100,
+        0
+      ],
+      [
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        92
+      ]
+    ],
+    "ablated_confusion_matrix": [
+      [
+        5,
+        95,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        2,
+        97,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        5,
+        94,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        2,
+        95,
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      [
+        2,
+        98,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        6,
+        93,
+        0,
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        3,
+        97,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    ]
+  },
+  "substantive_loss_assessment": {
+    "total_records_with_substantive_loss": 700,
+    "percentage_with_substantive_loss": 100.0,
+    "explanation": "In OpenSec-Triage, raw telemetry alone (e.g. 'client requested a DNS zone transfer' or 'workload opened an encrypted connection') is ambiguous by design in modern enterprise environments. The trailing verification clause contained the crucial ground truth (e.g. attacker control vs authorized maintenance vs routine daily workflow). Removing the clause strips the decisive triage discriminator."
+  }
+}

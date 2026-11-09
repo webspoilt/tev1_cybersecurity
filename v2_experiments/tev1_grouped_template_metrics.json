@@ -1,0 +1,143 @@
+{
+  "model": "togethercomputer/Tev1-0.8B-experimental",
+  "adapter": "C:\\Users\\ASUS\\Desktop\\jev\\v2_experiments\\tev1_grouped_template_pilot_v1",
+  "total_records": 777,
+  "accuracy": 0.9369369369369369,
+  "macro_f1": 0.9281025844207674,
+  "num_invalid": 0,
+  "invalid_rate": 0.0,
+  "elapsed_seconds": 417.7923662662506,
+  "ms_per_sample": 537.6993130839777,
+  "peak_vram_mb": 874.30126953125,
+  "confusion_matrix_labels": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+  ],
+  "confusion_matrix": [
+    [
+      117,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      92,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      123,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      65,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      38,
+      88,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      120,
+      0
+    ],
+    [
+      0,
+      10,
+      0,
+      0,
+      0,
+      0,
+      123
+    ]
+  ],
+  "classification_report": {
+    "A (malicious)": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 117.0
+    },
+    "B (suspicious)": {
+      "precision": 0.8932038834951457,
+      "recall": 1.0,
+      "f1-score": 0.9435897435897436,
+      "support": 92.0
+    },
+    "C (benign)": {
+      "precision": 1.0,
+      "recall": 0.9919354838709677,
+      "f1-score": 0.9959514170040485,
+      "support": 124.0
+    },
+    "D (expected_admin)": {
+      "precision": 0.6310679611650486,
+      "recall": 1.0,
+      "f1-score": 0.7738095238095238,
+      "support": 65.0
+    },
+    "E (authorised_testing)": {
+      "precision": 1.0,
+      "recall": 0.6984126984126984,
+      "f1-score": 0.822429906542056,
+      "support": 126.0
+    },
+    "F (misconfiguration)": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 120.0
+    },
+    "G (unknown)": {
+      "precision": 1.0,
+      "recall": 0.924812030075188,
+      "f1-score": 0.9609375,
+      "support": 133.0
+    },
+    "accuracy": 0.9369369369369369,
+    "macro avg": {
+      "precision": 0.9320388349514565,
+      "recall": 0.9450228874798363,
+      "f1-score": 0.9281025844207674,
+      "support": 777.0
+    },
+    "weighted avg": {
+      "precision": 0.9564918594044809,
+      "recall": 0.9369369369369369,
+      "f1-score": 0.9382711800394807,
+      "support": 777.0
+    }
+  }
+}
